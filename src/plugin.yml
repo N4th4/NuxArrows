@@ -1,3 +1,13 @@
 name: NuxArrows
-main: com.bukkit.N4th4.NuxArrows.NuxArrows
-version: 1.0
+version: 1.1
+author: N4th4
+main: net.n4th4.bukkit.nuxarrows.NuxArrows
+
+permissions:
+    nuxarrow.*:
+        description: Give access to all NuxArrows nodes
+        children:
+            nuxarrow.infinite: true
+    nuxarrow.infinite:
+        description: Allow you to have infinite arrow
+        default: op

@@ -1,4 +1,4 @@
-package com.bukkit.N4th4.NuxArrows;
+package net.n4th4.bukkit.nuxarrows;
 
 import org.bukkit.Material;
 import org.bukkit.block.Dispenser;
@@ -15,7 +15,7 @@ public class NABlockListener extends BlockListener {
 
     public void onBlockDispense(BlockDispenseEvent event) {
         if (event.getItem().getType() == Material.ARROW && event.getBlock().getType() == Material.DISPENSER) {
-            Dispenser dispenser = (Dispenser)event.getBlock().getState();
+            Dispenser dispenser = (Dispenser) event.getBlock().getState();
             ItemStack arrow = new ItemStack(Material.ARROW, 1);
             dispenser.getInventory().addItem(arrow);
             dispenser.update(true);
