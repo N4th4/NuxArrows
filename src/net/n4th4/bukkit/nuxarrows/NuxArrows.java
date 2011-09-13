@@ -11,9 +11,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class NuxArrows extends JavaPlugin {
     private final NABlockListener  blockListener  = new NABlockListener(this);
     private final NAPlayerListener playerListener = new NAPlayerListener(this);
-    public final Logger            log            = this.getServer().getLogger();
+    public Logger                  log;
 
     public void onEnable() {
+        log = this.getServer().getLogger();
+
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvent(Event.Type.BLOCK_DISPENSE, blockListener, Priority.Normal, this);
         pm.registerEvent(Event.Type.PLAYER_INTERACT, playerListener, Priority.Normal, this);
