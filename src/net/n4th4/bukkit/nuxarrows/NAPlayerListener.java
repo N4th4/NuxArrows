@@ -2,6 +2,7 @@ package net.n4th4.bukkit.nuxarrows;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerListener;
 import org.bukkit.inventory.ItemStack;
@@ -15,7 +16,7 @@ public class NAPlayerListener extends PlayerListener {
 
     public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
-        if (player.getItemInHand().getType() == Material.BOW && player.getInventory().contains(Material.ARROW) && player.hasPermission("nuxarrow.infinite")) {
+        if (player.getItemInHand().getType() == Material.BOW && player.getInventory().contains(Material.ARROW) && player.hasPermission("nuxarrow.infinite") && (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK)) {
             ItemStack arrow = new ItemStack(Material.ARROW, 1);
             player.getInventory().addItem(arrow);
         }
