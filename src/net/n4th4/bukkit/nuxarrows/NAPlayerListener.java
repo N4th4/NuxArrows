@@ -18,7 +18,6 @@ public class NAPlayerListener extends PlayerListener {
         if (player.getItemInHand().getType() == Material.BOW && player.getInventory().contains(Material.ARROW) && player.hasPermission("nuxarrow.infinite")) {
             ItemStack arrow = new ItemStack(Material.ARROW, 1);
             player.getInventory().addItem(arrow);
-            player.updateInventory();
         }
     }
 }
