@@ -19,6 +19,7 @@ public class NuxArrows extends JavaPlugin {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvent(Event.Type.BLOCK_DISPENSE, blockListener, Priority.Normal, this);
         pm.registerEvent(Event.Type.PLAYER_INTERACT, playerListener, Priority.Normal, this);
+        pm.registerEvent(Event.Type.PLAYER_PICKUP_ITEM, playerListener, Priority.Normal, this);
 
         PluginDescriptionFile pdfFile = this.getDescription();
         log.info("[NuxArrows] " + pdfFile.getName() + " version " + pdfFile.getVersion() + " is enabled!");
